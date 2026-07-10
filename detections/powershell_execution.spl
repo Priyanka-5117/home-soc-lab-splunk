@@ -1,0 +1,13 @@
+# Detection: Suspicious PowerShell Execution
+# MITRE Technique: T1059.001 - PowerShell
+# Tactic: Execution
+# Severity: High
+# Data Source: WinEventLog:Security via Splunk UF
+# Triggered By: Windows EventCode 4688 - Process creation with powershell
+# Author: Your Name | Date: 2026
+
+index=windows sourcetype="WinEventLog:Security" EventCode=4688
+| search New_Process_Name="*powershell*"
+| eval mitre_technique="T1059.001 - PowerShell"
+| eval severity="High"
+| table _time, host, Account_Name, New_Process_Name, Process_Command_Line, mitre_technique, severity
