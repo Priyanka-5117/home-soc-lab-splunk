@@ -1,0 +1,12 @@
+# Detection: New Local User Account Created
+# MITRE Technique: T1136.001 - Create Local Account
+# Tactic: Persistence
+# Severity: High
+# Data Source: WinEventLog:Security via Splunk UF
+# Triggered By: Windows EventCode 4720 - User account created
+# Author: Your Name | Date: 2026
+
+index=windows sourcetype="WinEventLog:Security" EventCode=4720
+| eval mitre_technique="T1136.001 - Create Local Account"
+| eval severity="High"
+| table _time, host, Account_Name, Sam_Account_Name, mitre_technique, severity
