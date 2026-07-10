@@ -1,0 +1,13 @@
+# Detection: Account Lockout Detected
+# MITRE Technique: T1110 - Brute Force
+# Tactic: Credential Access
+# Severity: High
+# Data Source: WinEventLog:Security via Splunk UF
+# Triggered By: Windows EventCode 4740 - Account locked out
+# Author: Your Name | Date: 2026
+
+index=windows sourcetype="WinEventLog:Security" EventCode=4740
+| eval mitre_technique="T1110 - Brute Force"
+| eval severity="High"
+| table _time, host, Account_Name, Caller_Computer_Name, mitre_technique, severity
+| sort -_time
