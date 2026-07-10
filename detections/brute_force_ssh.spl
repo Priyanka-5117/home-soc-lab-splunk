@@ -1,0 +1,14 @@
+# Detection: Failed Login Brute Force
+# MITRE Technique: T1110 - Brute Force
+# Tactic: Credential Access
+# Severity: High
+# Data Source: WinEventLog:Security via Splunk UF
+# Triggered By: >3 failed login attempts from same account
+# Author: Your Name | Date: 2026
+
+index=windows sourcetype="WinEventLog:Security" EventCode=4625
+| stats count by Account_Name, Source_Network_Address
+| where count > 3
+| eval mitre_technique="T1110 - Brute Force"
+| eval severity="High"
+| table Account_Name, Source_Network_Address, count, mitre_technique, severity
