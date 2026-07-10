@@ -1,0 +1,15 @@
+# Detection: Privileged Account Usage
+# MITRE Technique: T1078 - Valid Accounts
+# Tactic: Defense Evasion, Privilege Escalation
+# Severity: Medium
+# Data Source: WinEventLog:Security via Splunk UF
+# Triggered By: Windows EventCode 4672 - Special privileges assigned
+# Author: Your Name | Date: 2026
+
+index=windows sourcetype="WinEventLog:Security" EventCode=4672
+| stats count by Account_Name
+| where Account_Name!="SYSTEM" AND Account_Name!="LOCAL SERVICE" AND Account_Name!="NETWORK SERVICE"
+| eval mitre_technique="T1078 - Valid Accounts"
+| eval severity="Medium"
+| table Account_Name, count, mitre_technique, severity
+| sort -count
