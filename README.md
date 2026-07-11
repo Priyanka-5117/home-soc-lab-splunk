@@ -123,7 +123,7 @@ index=windows sourcetype="WinEventLog:Security" EventCode=4740
 *Attack Simulations & Results*
 
 | # | Attack Scenario           | Tool          | MITRE ID  | Detected? | Alert Fired? |
-|---|---|---|---|
+|---|---|---|---|---|
 | 1 | SMB Brute Force           | Hydra         | T1110     | ✅ Yes    | ✅ Yes      |
 | 2 | Network Port Scan         | Nmap          | T1046     | ✅ Yes    | ✅ Yes      |
 | 3 | Backdoor Account Creation | net user      | T1136.001 | ✅ Yes    | ✅ Yes      |
