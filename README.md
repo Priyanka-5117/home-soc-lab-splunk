@@ -39,6 +39,7 @@ Every detection rule is mapped to the **MITRE ATT&CK framework**, every attack i
 *Tools & Technologies*
 
 | Category                 | Tool                       | Version | Purpose                                               |
+|---|---|---|---|
 | SIEM                     | Splunk Enterprise          | 10.4.0  | Log ingestion, correlation, alerting, dashboards      |
 | Firewall                 | OPNsense                   | 26.1.6  | Network segmentation, traffic logging                 |
 | EDR/Telemetry            | Sysmon                     | v15     | Deep endpoint visibility — process, network, registry |
@@ -52,6 +53,7 @@ Every detection rule is mapped to the **MITRE ATT&CK framework**, every attack i
 *Data Sources Configured*
 
 | Source                     | Index    | Sourcetype            | Events Collected           |
+|---|---|---|---|
 | Windows Security Event Log | windows  | WinEventLog:Security  | 2,200+ events              |
 | Windows Sysmon             | windows  | XmlWinEventLog:Sysmon | Process, network, registry |
 | OPNsense Firewall          | opnsense | syslog                | Firewall allow/block rules |
@@ -118,6 +120,7 @@ index=windows sourcetype="WinEventLog:Security" EventCode=4740
 *Attack Simulations & Results*
 
 | # | Attack Scenario           | Tool          | MITRE ID  | Detected? | Alert Fired? |
+|---|---|---|---|
 | 1 | SMB Brute Force           | Hydra         | T1110     | ✅ Yes    | ✅ Yes      |
 | 2 | Network Port Scan         | Nmap          | T1046     | ✅ Yes    | ✅ Yes      |
 | 3 | Backdoor Account Creation | net user      | T1136.001 | ✅ Yes    | ✅ Yes      |
@@ -131,6 +134,7 @@ index=windows sourcetype="WinEventLog:Security" EventCode=4740
 Built a real-time SOC dashboard with 5 panels:
 
 | Panel                   | Description                                  |
+|---|---|
 | Events by Log Source    | Bar chart showing event distribution         |
 | Failed Logins Over Time | Line chart tracking authentication failures  |
 | Top Processes Created   | Bar chart of most spawned processes          |
@@ -178,6 +182,7 @@ Offensive Security Awareness
 📈 Lab Statistics
 
 | Metric                   | Value                             |
+|---|---|
 | Total Events Collected   | 2,400+                            |
 | Detection Rules Written  | 5                                 |
 | Alerts Configured        | 5 (Real-time)                     |
