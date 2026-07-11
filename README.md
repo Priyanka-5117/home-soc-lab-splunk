@@ -15,6 +15,8 @@ This project documents the end-to-end design, deployment, and operation of a **h
 Every detection rule is mapped to the **MITRE ATT&CK framework**, every attack is documented as a **formal incident report**
 
 *Lab Architecture*
+
+```
 ┌─────────────────────────────────────────────────────────┐
 │                    HOME SOC LAB                         │
 │                                                         │
@@ -32,6 +34,7 @@ Every detection rule is mapped to the **MITRE ATT&CK framework**, every attack i
 │                                                         │
 │  Hypervisor: VirtualBox 7.2 on Windows 11 Host          │
 └─────────────────────────────────────────────────────────┘
+```
 
 **Network:** All VMs communicate over a VirtualBox Host-Only network (10.0.0.0/24). OPNsense acts as the perimeter gateway. Splunk receives logs from all endpoints via Universal Forwarder (TCP 9997) and OPNsense syslog (UDP 514).
 
@@ -142,6 +145,8 @@ Built a real-time SOC dashboard with 5 panels:
 | PowerShell Timeline     | Line chart of PowerShell execution frequency |
 
 *Repository Structure*
+
+```
 home-soc-lab-splunk/
 │
 ├── README.md                          ← You are here
@@ -157,9 +162,11 @@ home-soc-lab-splunk/
 ├── INC-2026-001-failed-login-bruteforce.md
 ├── INC-2026-002-backdoor-account-created.md
 └── INC-2026-003-powershell-execution.md
+```
 
 *Key Skills Demonstrated*
 
+```
 Security Operations
 ├── SIEM Administration & Tuning (Splunk)
 ├── Log Analysis & Event Correlation
@@ -178,6 +185,7 @@ Offensive Security Awareness
 ├── Persistence Technique Recognition
 ├── Reconnaissance Detection (Nmap)
 └── Living-off-the-Land (LOL) Technique Detection
+```
 
 📈 Lab Statistics
 
